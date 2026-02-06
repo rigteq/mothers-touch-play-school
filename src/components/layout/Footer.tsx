@@ -77,7 +77,7 @@ export function Footer() {
                     <div>
                         <h3 className="text-lg font-semibold text-white mb-6">Enquire Now</h3>
                         <p className="text-sm text-slate-400 mb-4">
-                            Admissions open for 2024-25. Request a callback from our admissions team.
+                            Admissions open for 2026-27. Request a callback from our admissions team.
                         </p>
                         <form action="mailto:support@mothertouch.com" method="post" encType="text/plain" className="space-y-3">
                             <input

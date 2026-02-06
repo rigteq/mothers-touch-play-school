@@ -42,7 +42,7 @@ export function FloatingElements() {
                         <div className="bg-gradient-to-r from-primary to-blue-600 p-4 flex justify-between items-center text-white">
                             <div>
                                 <h4 className="font-bold text-lg">Admissions Open!</h4>
-                                <p className="text-xs text-blue-100">Limited seats for 2024-25</p>
+                                <p className="text-xs text-blue-100">Limited seats for 2026-27</p>
                             </div>
                             <button
                                 onClick={() => setShowPopup(false)}
