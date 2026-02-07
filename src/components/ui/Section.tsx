@@ -12,7 +12,7 @@ export function Section({ id, className, children, backgroundImage }: SectionPro
     return (
         <section
             id={id}
-            className={cn("relative py-20 lg:py-32 overflow-hidden", className)}
+            className={cn("relative py-12 lg:py-20 overflow-hidden", className)}
         >
             {backgroundImage && (
                 <div className="absolute inset-0 -z-10">

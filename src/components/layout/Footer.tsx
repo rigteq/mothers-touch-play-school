@@ -16,11 +16,9 @@ export function Footer() {
 
                     {/* Brand Info */}
                     <div className="space-y-6">
-                        <div className="flex items-center gap-2">
-                            <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-bold text-xl">
-                                M
-                            </div>
-                            <span className="text-2xl font-bold tracking-tight text-white">
+                        <div className="flex items-center gap-3">
+                            <img src="/logo.svg" alt="Mothers Touch Logo" className="h-12 w-12" />
+                            <span className="text-xl font-bold tracking-tight text-white">
                                 Mothers Touch
                             </span>
                         </div>
@@ -103,7 +101,7 @@ export function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className="mt-16 border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+                <div className="mt-12 border-t border-slate-800 pt-6 text-center text-sm text-slate-500">
                     <p>© {new Date().getFullYear()} Mothers Touch Play School. All rights reserved.</p>
                 </div>
             </div>

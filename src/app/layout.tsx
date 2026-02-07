@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Mothers Touch Play School | Gajraula's Best Kindergarten & Daycare",
   description: "Mothers Touch Play School in Gajraula provides a world-class holistic learning environment for children. Admissions open for Playgroup, Nursery, LKG, and UKG.",
   keywords: "Play School in Gajraula, Nursery School, Best Kindergarten, Mothers Touch, Preschool Admission",
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
