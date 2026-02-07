@@ -117,34 +117,30 @@ export function Hero() {
                  For now, creating a high-quality gradient placeholder with text */}
                         <div className="w-full h-full bg-slate-200 relative flex items-center justify-center overflow-hidden">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-amber-500/10 z-0"></div>
-                            {/* Placeholder for UFHD Image */}
-                            <div className="text-center z-10 p-8">
-                                <p className="text-slate-400 text-sm font-mono mb-2">REPLACE WITH UFHD IMAGE</p>
-                                <p className="text-slate-500 font-semibold">Kids Playing / Learning Environment</p>
-                            </div>
-                            {/* Simulated Image Content */}
+
+                            {/* High Quality Hero Image */}
                             <img
-                                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                                alt="Happy kids learning"
+                                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                                alt="Bright and happy classroom environment"
                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
 
                             {/* Overlay Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
                             {/* Floating Badge */}
                             <motion.div
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute bottom-8 left-8 bg-white/90 backdrop-blur rounded-2xl p-4 shadow-lg border border-white/50 max-w-xs"
+                                className="absolute bottom-8 left-8 bg-white/95 backdrop-blur rounded-2xl p-4 shadow-xl border border-white/50 max-w-xs z-20"
                             >
-                                <div className="flex items-center gap-3 mb-2">
+                                <div className="flex items-center gap-3">
                                     <div className="p-2 bg-green-100 rounded-full text-green-600">
                                         <Heart size={20} className="fill-current" />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-slate-800">Holistic Growth</p>
-                                        <p className="text-xs text-slate-500">Focus on Mind, Body & Soul</p>
+                                        <p className="font-bold text-slate-900 text-sm">Holistic Growth</p>
+                                        <p className="text-xs text-slate-500">Mind, Body & Soul</p>
                                     </div>
                                 </div>
                             </motion.div>

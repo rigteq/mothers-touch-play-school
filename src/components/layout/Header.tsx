@@ -74,7 +74,12 @@ export function Header() {
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
                     <Link
                         href="#contact"
-                        className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-inset ring-white/20 hover:bg-white/20 transition-all backdrop-blur-sm"
+                        className={cn(
+                            "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold ring-1 ring-inset transition-all backdrop-blur-sm",
+                            isScrolled
+                                ? "bg-primary/10 text-primary ring-primary/20 hover:bg-primary/20"
+                                : "bg-white/10 text-white ring-white/20 hover:bg-white/20"
+                        )}
                     >
                         <UserCheck className="h-4 w-4" />
                         Parent Portal

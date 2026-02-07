@@ -20,7 +20,7 @@ export function Gallery() {
                 <h3 className="text-3xl lg:text-5xl font-bold text-slate-900">Life at <span className="text-gradient">Mothers Touch</span></h3>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
                 {images.map((src, idx) => (
                     <motion.div
                         key={idx}
@@ -28,18 +28,17 @@ export function Gallery() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: idx * 0.1 }}
                         viewport={{ once: true }}
-                        className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ${idx === 0 ? 'md:col-span-2 md:row-span-2' : ''
-                            }`}
+                        className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 relative group
+                            ${idx === 0 ? 'md:col-span-2 md:row-span-2' : ''}
+                            ${idx === 4 ? 'md:col-span-2' : ''}
+                        `}
                     >
-                        <div className="group relative w-full h-full min-h-[200px] overflow-hidden">
-                            {/* Using generic placeholders if Unsplash images fail to load or for structure */}
-                            <img
-                                src={src}
-                                alt={`Gallery image ${idx + 1}`}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                        </div>
+                        <img
+                            src={src}
+                            alt={`Gallery image ${idx + 1}`}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     </motion.div>
                 ))}
             </div>

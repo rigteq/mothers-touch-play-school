@@ -11,7 +11,7 @@ export function Footer() {
             <div className="absolute top-0 right-0 -mt-20 -mr-20 h-[500px] w-[500px] rounded-full bg-primary/20 blur-3xl opacity-50" />
             <div className="absolute bottom-0 left-0 -mb-20 -ml-20 h-[300px] w-[300px] rounded-full bg-secondary/20 blur-3xl opacity-50" />
 
-            <div className="container mx-auto px-4 py-16 lg:py-24 relative z-10">
+            <div className="container mx-auto px-4 pt-16 pb-8 lg:pt-24 lg:pb-8 relative z-10">
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-4 lg:gap-8">
 
                     {/* Brand Info */}
