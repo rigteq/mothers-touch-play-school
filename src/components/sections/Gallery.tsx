@@ -34,7 +34,7 @@ export function Gallery() {
                     animate={{ x: ["0%", "-33.33%"] }} // Move by 1/3 since we have 3 sets of images
                     transition={{
                         ease: "linear",
-                        duration: 120, // Adjust speed: higher = slower
+                        duration: 180, // Adjust speed: higher = slower
                         repeat: Infinity,
                     }}
                     whileHover={{ animationPlayState: "paused" }} // Note: Framer Motion pure 'animate' doesn't support playState pause easily this way, so we use a different approach or rely on hover dragging if needed. 
