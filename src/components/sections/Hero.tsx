@@ -66,7 +66,7 @@ export function Hero() {
                 <div className="w-full h-full relative flex items-center justify-center bg-slate-800">
                     <img
                         src="/hero-banner.png"
-                        alt="Mothers Touch School Welcome Banner"
+                        alt="Mothers Touch public School Welcome Banner"
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 pointer-events-none" />
@@ -94,7 +94,7 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.5 }}
                     className="text-lg lg:text-2xl text-slate-600 leading-relaxed max-w-3xl"
                 >
-                    Experience world-class early childhood education at Mothers Touch, Gajraula. We nurture young minds with a perfect blend of modern curriculum and traditional values.
+                    Experience world-class early childhood education at Mothers Touch public School, Gajraula. We nurture young minds with a perfect blend of modern curriculum and traditional values.
                 </motion.p>
 
                 <motion.div

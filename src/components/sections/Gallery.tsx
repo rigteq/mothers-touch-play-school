@@ -4,15 +4,11 @@ import { Section } from '@/components/ui/Section';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-// Using ONLY the specific photos provided by the user (Circle, Group, Stage, Karate)
-// Note: User must rename their uploaded images to match these filenames in the public folder.
-const galleryImages = [
-    { src: '/gallery-circle.png', alt: 'Kids actively learning in circle time' },
-    { src: '/gallery-group.png', alt: 'Happy students and teachers group photo' },
-    { src: '/gallery-stage.png', alt: 'Annual function stage performance' },
-    { src: '/gallery-karate.png', alt: 'Karate and physical education class' },
-    { src: '/gallery-staff.png', alt: 'Our dedicated staff members' },
-];
+// Gallery images from the public folder (Gallery-1 to Gallery-110)
+const galleryImages = Array.from({ length: 110 }, (_, i) => ({
+    src: `/Gallery-${i + 1}.jpeg`,
+    alt: `Mothers Touch Public School - Gallery Photo ${i + 1}`,
+}));
 
 // Duplicate the array to create a seamless infinite loop
 const marqueeImages = [...galleryImages, ...galleryImages, ...galleryImages];
@@ -38,7 +34,7 @@ export function Gallery() {
                     animate={{ x: ["0%", "-33.33%"] }} // Move by 1/3 since we have 3 sets of images
                     transition={{
                         ease: "linear",
-                        duration: 25, // Adjust speed: higher = slower
+                        duration: 120, // Adjust speed: higher = slower
                         repeat: Infinity,
                     }}
                     whileHover={{ animationPlayState: "paused" }} // Note: Framer Motion pure 'animate' doesn't support playState pause easily this way, so we use a different approach or rely on hover dragging if needed. 

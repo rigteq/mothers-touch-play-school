@@ -104,12 +104,12 @@ export function About() {
 
             {/* --- Main Content --- */}
             <div className="text-center max-w-4xl mx-auto mb-16 relative z-10 px-4">
-                <h2 className="text-secondary font-bold tracking-wide uppercase text-sm mb-3">About Mothers Touch</h2>
+                <h2 className="text-secondary font-bold tracking-wide uppercase text-sm mb-3">About Mothers Touch public School</h2>
                 <h3 className="text-4xl lg:text-6xl font-bold text-slate-900 mb-6 drop-shadow-sm leading-tight">
                     Nurturing the <span className="text-primary">Leaders of Tomorrow</span>
                 </h3>
                 <p className="text-lg lg:text-xl text-slate-700 leading-relaxed font-medium max-w-2xl mx-auto bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-white/50">
-                    At Mothers Touch Play School, Gajraula, we believe that every child is unique and has infinite potential.
+                    At Mothers Touch public School, Gajraula, we believe that every child is unique and has infinite potential.
                     Our philosophy is centered around the comprehensive development of the child — cognitive, physical,
                     social, and emotional. We provide a safe, loving, and stimulating environment that feels just like a second home.
                 </p>

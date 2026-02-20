@@ -19,15 +19,20 @@ export function Footer() {
                         <div className="flex items-center gap-3">
                             <img src="/logo.svg" alt="Mothers Touch Logo" className="h-12 w-12" />
                             <span className="text-xl font-bold tracking-tight text-white">
-                                Mothers Touch
+                                Mothers Touch public School
                             </span>
                         </div>
                         <p className="text-base leading-relaxed text-slate-400 max-w-xs">
                             Nurturing young minds with love, care, and excellence. A prestigious institution dedicated to holistic child development in Gajraula.
                         </p>
                         <div className="flex space-x-4">
-                            {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                                <Link key={i} href="#" className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white transition-all duration-300">
+                            {[
+                                { Icon: Facebook, href: 'https://www.facebook.com/p/Mothers-touch-public-school-100078304175728/' },
+                                { Icon: Instagram, href: 'https://www.instagram.com/p/DTHu8gTkR3Y/' },
+                                { Icon: Twitter, href: '#' },
+                                { Icon: Youtube, href: '#' },
+                            ].map(({ Icon, href }, i) => (
+                                <Link key={i} href={href} target={href !== '#' ? '_blank' : undefined} rel={href !== '#' ? 'noopener noreferrer' : undefined} className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white transition-all duration-300">
                                     <Icon className="h-5 w-5" />
                                 </Link>
                             ))}
@@ -38,11 +43,22 @@ export function Footer() {
                     <div>
                         <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
                         <ul className="space-y-4">
-                            {['About Us', 'Our Programs', 'Admissions', 'Gallery', 'Parent Portal', 'Careers'].map((link) => (
-                                <li key={link}>
-                                    <Link href="#" className="flex items-center gap-2 text-slate-400 hover:text-secondary transition-colors group">
+                            {[
+                                { label: 'About Us', href: '#about' },
+                                { label: 'Our Programs', href: '#programs' },
+                                { label: 'Admissions', href: '#contact' },
+                                { label: 'Gallery', href: '#gallery' },
+                                { label: 'Admin Portal', href: 'https://freeschoolms.vercel.app/', external: true },
+                                { label: 'Facilities', href: '#facilities' },
+                            ].map((link) => (
+                                <li key={link.label}>
+                                    <Link
+                                        href={link.href}
+                                        {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                                        className="flex items-center gap-2 text-slate-400 hover:text-secondary transition-colors group"
+                                    >
                                         <ArrowRight className="h-4 w-4 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-secondary" />
-                                        {link}
+                                        {link.label}
                                     </Link>
                                 </li>
                             ))}
@@ -86,7 +102,20 @@ export function Footer() {
                             />
                             <input
                                 type="tel"
-                                placeholder="Phone Number"
+                                inputMode="numeric"
+                                pattern="[0-9]{10}"
+                                maxLength={10}
+                                placeholder="Phone Number (10 digits)"
+                                onKeyDown={(e) => {
+                                    const allowed = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'];
+                                    if (!allowed.includes(e.key) && !/^[0-9]$/.test(e.key)) {
+                                        e.preventDefault();
+                                    }
+                                }}
+                                onPaste={(e) => {
+                                    const pasted = e.clipboardData.getData('text');
+                                    if (!/^[0-9]+$/.test(pasted)) e.preventDefault();
+                                }}
                                 className="w-full rounded-lg bg-slate-800 border-none px-4 py-3 text-sm text-white placeholder-slate-500 focus:ring-2 focus:ring-secondary focus:bg-slate-700 transition-all"
                                 required
                             />
@@ -102,7 +131,7 @@ export function Footer() {
 
                 {/* Copyright */}
                 <div className="mt-12 border-t border-slate-800 pt-6 text-center text-sm text-slate-500">
-                    <p>© {new Date().getFullYear()} Mothers Touch Play School. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Mothers Touch public School. All rights reserved.</p>
                 </div>
             </div>
         </footer>

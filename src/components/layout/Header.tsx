@@ -22,10 +22,10 @@ export function Header() {
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8 h-full" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3">
-                        <span className="sr-only">Mothers Touch Play School</span>
-                        <img src="/logo.png" alt="Mothers Touch Logo" className="h-16 w-auto" />
+                        <span className="sr-only">Mothers Touch public School</span>
+                        <img src="/logo.png" alt="Mothers Touch Logo" className="h-16 w-auto bg-white rounded-lg p-1" />
                         <span className="text-xl font-bold tracking-tight text-slate-900">
-                            Mothers Touch
+                            Mothers Touch public School
                         </span>
                     </Link>
                 </div>
@@ -56,11 +56,13 @@ export function Header() {
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-3">
                     {/* Parent Portal Button - Outlined Style */}
                     <Link
-                        href="#parent-portal"
+                        href="https://freeschoolms.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold border border-primary/20 text-primary hover:bg-primary/5 transition-all"
                     >
                         <UserCheck className="h-4 w-4" />
-                        Parent Portal
+                        Admin Portal
                     </Link>
 
                     {/* Admissions Button - Filled Style */}
@@ -86,8 +88,8 @@ export function Header() {
                     >
                         <div className="flex items-center justify-between">
                             <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                                <img src="/logo.png" alt="Mothers Touch Logo" className="h-14 w-auto" />
-                                <span className="text-base font-bold text-slate-900">Mothers Touch</span>
+                                <img src="/logo.png" alt="Mothers Touch Logo" className="h-14 w-auto bg-white rounded-lg p-1" />
+                                <span className="text-base font-bold text-slate-900">Mothers Touch public School</span>
                             </Link>
                             <button
                                 type="button"
@@ -114,11 +116,13 @@ export function Header() {
                                 </div>
                                 <div className="py-6 space-y-3">
                                     <Link
-                                        href="#parent-portal"
+                                        href="https://freeschoolms.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-primary hover:bg-blue-50"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
-                                        Parent Portal
+                                        Admin Portal
                                     </Link>
                                     <Link
                                         href="#contact"
