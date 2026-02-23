@@ -78,8 +78,17 @@ export function Contact() {
                         </div>
 
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-slate-700">Phone Number</label>
-                            <input type="tel" name="phone" className="w-full rounded-lg border-slate-200 focus:ring-primary focus:border-primary px-4 py-2 border" required />
+                            <label className="text-sm font-medium text-slate-700">Mobile Number</label>
+                            <input
+                                type="tel"
+                                name="phone"
+                                className="w-full rounded-lg border-slate-200 focus:ring-primary focus:border-primary px-4 py-2 border"
+                                required
+                                pattern="[0-9]*"
+                                onInput={(e) => {
+                                    e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
+                                }}
+                            />
                         </div>
 
                         <div className="space-y-2">

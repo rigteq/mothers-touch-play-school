@@ -62,8 +62,21 @@ export function Gallery() {
                 <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
 
                 <motion.div
+<<<<<<< HEAD
                     ref={containerRef}
                     className="flex gap-4 lg:gap-6 w-max py-4 cursor-grab active:cursor-grabbing"
+=======
+                    className="flex gap-6 w-max"
+                    animate={{ x: ["0%", "-33.33%"] }} // Move by 1/3 since we have 3 sets of images
+                    transition={{
+                        ease: "linear",
+                        duration: 180, // Adjust speed: higher = slower
+                        repeat: Infinity,
+                    }}
+                    whileHover={{ animationPlayState: "paused" }} // Note: Framer Motion pure 'animate' doesn't support playState pause easily this way, so we use a different approach or rely on hover dragging if needed. 
+                    // Actually, let's use a simpler drag-compatible approach or just keep it auto-scrolling. 
+                    // To add "User Interactive", drag constraints are great.
+>>>>>>> 105bcbdb8e86f035dd721f330edf0dd6ec019835
                     drag="x"
                     dragConstraints={dragConstraints}
                     dragElastic={0.1}
