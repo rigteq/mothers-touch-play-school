@@ -1,7 +1,7 @@
 'use client';
 
 import { Section } from '@/components/ui/Section';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useAnimationFrame } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -19,18 +19,52 @@ export function Gallery() {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
     const [isPaused, setIsPaused] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
-    const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
+
+    const [setWidth, setSetWidth] = useState(0);
+    const x = useMotionValue(0);
 
     useEffect(() => {
-        if (containerRef.current) {
-            const contentWidth = containerRef.current.scrollWidth;
-            const containerWidth = containerRef.current.offsetWidth;
-            setDragConstraints({
-                left: -(contentWidth - containerWidth),
-                right: 0,
-            });
+        const measure = () => {
+            if (containerRef.current && containerRef.current.children.length >= galleryImages.length + 1) {
+                const first = containerRef.current.children[0] as HTMLElement;
+                const second = containerRef.current.children[galleryImages.length] as HTMLElement;
+                const newSetWidth = second.offsetLeft - first.offsetLeft;
+                setSetWidth(newSetWidth);
+
+                if (x.get() === 0) {
+                    x.set(-newSetWidth);
+                }
+            }
+        };
+
+        measure();
+        window.addEventListener('resize', measure);
+        return () => window.removeEventListener('resize', measure);
+    }, [x]);
+
+    useAnimationFrame((t, delta) => {
+        if (!setWidth) return;
+
+        let currentX = x.get();
+
+        if (!isPaused && selectedImage === null) {
+            const speed = setWidth / 180000;
+            currentX -= speed * delta;
         }
-    }, [marqueeImages.length]);
+
+        let wrapped = false;
+        if (currentX <= -setWidth * 2) {
+            currentX += setWidth;
+            wrapped = true;
+        } else if (currentX >= 0) {
+            currentX -= setWidth;
+            wrapped = true;
+        }
+
+        if (wrapped || (!isPaused && selectedImage === null)) {
+            x.set(currentX);
+        }
+    });
 
     const activeImage = selectedImage !== null
         ? galleryImages.find(img => img.id === selectedImage)
@@ -65,22 +99,12 @@ export function Gallery() {
                 <motion.div
                     ref={containerRef}
                     className="flex gap-4 lg:gap-6 w-max py-4 cursor-grab active:cursor-grabbing"
+                    style={{ x }}
                     drag="x"
-                    dragConstraints={dragConstraints}
-                    dragElastic={0.1}
                     onDragStart={() => setIsPaused(true)}
                     onDragEnd={() => setIsPaused(false)}
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
-                    animate={(!isPaused && selectedImage === null) ? { x: ["0%", "-33.333%"] } : undefined}
-                    transition={{
-                        x: {
-                            repeat: Infinity,
-                            repeatType: "loop",
-                            duration: 180,
-                            ease: "linear",
-                        }
-                    }}
                 >
                     {marqueeImages.map((img, index) => (
                         <motion.div
@@ -119,6 +143,16 @@ export function Gallery() {
                         className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 lg:p-10"
                         onClick={() => setSelectedImage(null)}
                     >
+                        <motion.button
+                            className="absolute top-4 right-4 lg:top-8 lg:right-8 z-[110] p-2 lg:p-3 bg-white text-slate-900 shadow-2xl rounded-full transition-transform hover:scale-110 active:scale-95 border-2 border-slate-200"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedImage(null);
+                            }}
+                        >
+                            <X size={24} className="lg:w-8 lg:h-8" />
+                        </motion.button>
+
                         <button
                             className="absolute left-4 lg:left-10 z-50 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors hidden md:block"
                             onClick={(e) => {
@@ -167,16 +201,6 @@ export function Gallery() {
                                 }
                             }}
                         >
-                            <motion.button
-                                className="absolute -top-4 -right-4 lg:-top-6 lg:-right-6 z-50 p-2 lg:p-3 bg-white text-slate-900 shadow-2xl rounded-full transition-transform hover:scale-110 active:scale-95 border-2 border-slate-200"
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    setSelectedImage(null);
-                                }}
-                            >
-                                <X size={24} className="lg:w-8 lg:h-8" />
-                            </motion.button>
-
                             <img
                                 src={activeImage.src}
                                 alt={activeImage.alt}
