@@ -17,6 +17,7 @@ const marqueeImages = [...galleryImages, ...galleryImages, ...galleryImages];
 
 export function Gallery() {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
+    const [isPaused, setIsPaused] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
     const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
 
@@ -67,7 +68,11 @@ export function Gallery() {
                     drag="x"
                     dragConstraints={dragConstraints}
                     dragElastic={0.1}
-                    animate={{ x: selectedImage === null ? ["0%/-3", "-33.33%"] : undefined }}
+                    onDragStart={() => setIsPaused(true)}
+                    onDragEnd={() => setIsPaused(false)}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                    animate={(!isPaused && selectedImage === null) ? { x: ["0%", "-33.333%"] } : undefined}
                     transition={{
                         x: {
                             repeat: Infinity,
