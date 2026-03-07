@@ -17,7 +17,7 @@ export function Footer() {
                     {/* Brand Info */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-3">
-                            <img src="/logo.svg" alt="Mothers Touch Logo" className="h-12 w-12" />
+                            <img src="/logo.png" alt="Mothers Touch Logo" className="h-12 w-auto bg-white rounded-lg p-1" />
                             <span className="text-xl font-bold tracking-tight text-white">
                                 Mothers Touch public School
                             </span>
