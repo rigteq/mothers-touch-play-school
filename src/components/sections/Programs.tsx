@@ -9,36 +9,36 @@ import { motion } from 'framer-motion';
 
 const programs = [
     {
-        title: 'Play Group',
-        age: '1.5 - 2.5 Years',
-        description: 'A fun-filled introduction to social interaction and sensory exploration. We focus on basic motor skills and making friends.',
+        title: 'Play Group & Nursery',
+        age: '1.5 - 3.5 Years',
+        description: 'A fun-filled introduction to social interaction, sensory exploration, and early academics through playful activities.',
         icon: Baby,
         color: 'bg-pink-100 text-pink-600',
         border: 'border-pink-200'
     },
     {
-        title: 'Nursery',
-        age: '2.5 - 3.5 Years',
-        description: 'Building foundations in language, numbers, and creativity through structured play. Introduction to alphabets and phonics.',
-        icon: Palette,
-        color: 'bg-blue-100 text-blue-600',
-        border: 'border-blue-200'
-    },
-    {
-        title: 'LKG',
-        age: '3.5 - 4.5 Years',
-        description: 'Developing reading, writing, and logical thinking skills. Focus on confidence building and public speaking basics.',
+        title: 'LKG to UKG',
+        age: '3.5 - 5.5 Years',
+        description: 'Developing reading, writing, and logical thinking skills while preparing for primary school with a focus on confidence and independence.',
         icon: PencilRuler,
         color: 'bg-green-100 text-green-600',
         border: 'border-green-200'
     },
     {
-        title: 'UKG',
-        age: '4.5 - 5.5 Years',
-        description: 'Preparing for primary school with advanced concepts in math, science, and language. Emphasis on independent learning.',
+        title: '1st to 5th',
+        age: '6 - 10 Years',
+        description: 'Comprehensive primary education with emphasis on fundamentals of math, science, language and character building.',
         icon: GraduationCap,
         color: 'bg-amber-100 text-amber-600',
         border: 'border-amber-200'
+    },
+    {
+        title: '6th to 8th',
+        age: '11 - 14 Years',
+        description: 'Strong middle school program focusing on concept clarity and preparation for secondary education.',
+        icon: Palette,
+        color: 'bg-blue-100 text-blue-600',
+        border: 'border-blue-200'
     }
 ];
 

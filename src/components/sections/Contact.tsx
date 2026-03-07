@@ -98,6 +98,8 @@ export function Contact() {
                                 <option>Nursery</option>
                                 <option>LKG</option>
                                 <option>UKG</option>
+                                <option>1st to 5th</option>
+                                <option>6th to 8th</option>
                             </select>
                         </div>
 

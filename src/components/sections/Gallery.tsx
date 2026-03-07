@@ -140,17 +140,17 @@ export function Gallery() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 lg:p-10"
+                        className="fixed inset-0 z-[10001] bg-black/95 flex items-center justify-center p-4 lg:p-10"
                         onClick={() => setSelectedImage(null)}
                     >
                         <motion.button
-                            className="absolute top-4 right-4 lg:top-8 lg:right-8 z-[110] p-2 lg:p-3 bg-white text-slate-900 shadow-2xl rounded-full transition-transform hover:scale-110 active:scale-95 border-2 border-slate-200"
+                            className="absolute top-6 right-6 lg:top-8 lg:right-8 z-[10002] p-3 w-12 h-12 bg-white text-slate-900 shadow-2xl rounded-full transition-transform hover:scale-110 active:scale-95 border-2 border-slate-200"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setSelectedImage(null);
                             }}
                         >
-                            <X size={24} className="lg:w-8 lg:h-8" />
+                            <X size={28} />
                         </motion.button>
 
                         <button
@@ -178,7 +178,7 @@ export function Gallery() {
                             initial={{ scale: 0.9, opacity: 0, x: 20 }}
                             animate={{ scale: 1, opacity: 1, x: 0 }}
                             exit={{ scale: 0.9, opacity: 0, x: -20 }}
-                            className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center touch-none"
+                            className="relative max-w-4xl w-full max-h-[80vh] flex flex-col items-center touch-none"
                             onClick={(e) => e.stopPropagation()}
                             drag
                             dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
