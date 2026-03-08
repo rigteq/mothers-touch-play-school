@@ -38,7 +38,7 @@ export function Contact() {
                             </div>
                             <div>
                                 <h4 className="font-bold text-slate-900 text-lg">Call Us</h4>
-                                <p className="text-slate-600">+91 98765 43210</p>
+                                <p className="text-slate-600">+91 9997024689</p>
                                 <p className="text-slate-500 text-sm">Mon - Sat, 9:00 AM - 5:00 PM</p>
                             </div>
                         </div>
@@ -49,7 +49,7 @@ export function Contact() {
                             </div>
                             <div>
                                 <h4 className="font-bold text-slate-900 text-lg">Email Us</h4>
-                                <p className="text-slate-600">support@mothertouch.com</p>
+                                <p className="text-slate-600">motherstouch2018a@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ export function Contact() {
                     <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary" />
                     <h3 className="text-2xl font-bold text-slate-900 mb-6">Admission Enquiry</h3>
 
-                    <form action="mailto:support@mothertouch.com" method="post" encType="text/plain" className="space-y-4">
+                    <form action="mailto:motherstouch2018a@gmail.com" method="post" encType="text/plain" className="space-y-4">
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Child's Name</label>

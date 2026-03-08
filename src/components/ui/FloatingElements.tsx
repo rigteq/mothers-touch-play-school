@@ -62,7 +62,7 @@ export function FloatingElements() {
                             <p className="text-sm text-slate-600">
                                 Give your child the best start in life. Enquire now for early bird concessions.
                             </p>
-                            <form action="mailto:support@mothertouch.com" method="post" className="space-y-3">
+                            <form action="mailto:motherstouch2018a@gmail.com" method="post" className="space-y-3">
                                 <input
                                     type="tel"
                                     placeholder="Your Phone Number"

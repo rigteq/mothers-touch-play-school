@@ -78,11 +78,11 @@ export function Footer() {
                             </li>
                             <li className="flex items-center gap-3 text-slate-400">
                                 <Phone className="h-5 w-5 text-secondary shrink-0" />
-                                <a href="tel:+911234567890" className="hover:text-white transition-colors">+91 98765 43210</a>
+                                <a href="tel:+919997024689" className="hover:text-white transition-colors">+91 9997024689</a>
                             </li>
                             <li className="flex items-center gap-3 text-slate-400">
                                 <Mail className="h-5 w-5 text-secondary shrink-0" />
-                                <a href="mailto:support@mothertouch.com" className="hover:text-white transition-colors">support@mothertouch.com</a>
+                                <a href="mailto:motherstouch2018a@gmail.com" className="hover:text-white transition-colors">motherstouch2018a@gmail.com</a>
                             </li>
                         </ul>
                     </div>
@@ -93,7 +93,7 @@ export function Footer() {
                         <p className="text-sm text-slate-400 mb-4">
                             Admissions open for 2026-27. Request a callback from our admissions team.
                         </p>
-                        <form action="mailto:support@mothertouch.com" method="post" encType="text/plain" className="space-y-3">
+                        <form action="mailto:motherstouch2018a@gmail.com" method="post" encType="text/plain" className="space-y-3">
                             <input
                                 type="text"
                                 placeholder="Parent's Name"
