@@ -1,6 +1,37 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## FormSubmit.co Setup
+
+This project uses FormSubmit.co - a free third-party form backend service that handles email delivery directly without needing a backend server.
+
+### How It Works:
+- Forms submit POST requests to `https://formsubmit.co/yatendra9971@gmail.com`
+- Emails are instantly sent to `yatendra9971@gmail.com`
+- Includes spam protection with honeypot fields
+- Custom email subjects and HTML templates
+- **Thank You Popup**: After successful submission, users see a confirmation popup
+
+### Form Configuration:
+Each form includes these hidden fields:
+- `_honey` - Spam protection (honeypot)
+- `_captcha="false"` - Disables captcha
+- `_subject` - Custom email subject
+- `_template="box"` - HTML email template
+- `_next` - Redirects back with success parameters to show thank you popup
+
+### Thank You Popup:
+- Automatically appears after form submission
+- Shows "Thank You! Your query has been submitted successfully. Our team will contact you soon."
+- Can be closed by clicking the X button or outside the popup
+- Uses URL parameters to detect successful submissions
+
+### Forms Updated:
+1. **Dashboard Popup** (FloatingElements.tsx) - Appears after 5 seconds
+2. **Admission Enquiry Form** (Contact.tsx) - Full enquiry form
+3. **Footer Enquiry Form** (Footer.tsx) - Quick callback request
+
+### Testing:
+After form submission, users are redirected back to the same page with success parameters, triggering the thank you popup.
 
 First, run the development server:
 

@@ -66,13 +66,18 @@ export function Header() {
                     </Link>
 
                     {/* Admissions Button - Filled Style */}
-                    <Link
-                        href="#contact"
+                    <button
+                        onClick={() => {
+                            const contactSection = document.getElementById('contact');
+                            if (contactSection) {
+                                contactSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
                         className="flex items-center gap-2 rounded-full bg-secondary px-5 py-1.5 text-sm font-semibold text-white shadow-md hover:bg-amber-500 hover:scale-105 transition-all"
                     >
                         <Phone className="h-4 w-4" />
                         Admissions Open
-                    </Link>
+                    </button>
                 </div>
             </nav>
 
@@ -116,6 +121,13 @@ export function Header() {
                                 </div>
                                 <div className="py-6 space-y-3">
                                     <Link
+                                        href="tel:+919997024689"
+                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-green-600 text-center shadow-sm hover:bg-green-700"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        📞 Call Now
+                                    </Link>
+                                    <Link
                                         href="https://freeschoolms.vercel.app/"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -123,13 +135,6 @@ export function Header() {
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Admin Portal
-                                    </Link>
-                                    <Link
-                                        href="#contact"
-                                        className="block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-secondary text-center shadow-sm"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        Apply for Admission
                                     </Link>
                                 </div>
                             </div>

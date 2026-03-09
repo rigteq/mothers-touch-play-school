@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { ThankYouPopup } from '@/components/ui/ThankYouPopup';
 
 export function FloatingElements() {
     const [showPopup, setShowPopup] = useState(false);
+    const [showThankYou, setShowThankYou] = useState(false);
 
     useEffect(() => {
         // Show popup after 5 seconds
@@ -15,6 +17,19 @@ export function FloatingElements() {
         }, 5000);
         return () => clearTimeout(timer);
     }, []);
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        // Show thank you popup immediately
+        setShowThankYou(true);
+        // Close the admission popup
+        setShowPopup(false);
+        // Submit the form to FormSubmit.co after a short delay
+        setTimeout(() => {
+            form.submit();
+        }, 500);
+    };
 
     return (
         <>
@@ -62,14 +77,23 @@ export function FloatingElements() {
                             <p className="text-sm text-slate-600">
                                 Give your child the best start in life. Enquire now for early bird concessions.
                             </p>
-                            <form action="mailto:motherstouch2018a@gmail.com" method="post" className="space-y-3">
+                            <form action="https://formsubmit.co/motherstouch2018a@gmail.com" method="POST" onSubmit={handleSubmit} className="space-y-3">
+                                <input type="text" name="_honey" style={{ display: 'none' }} />
+                                <input type="hidden" name="_captcha" value="false" />
+                                <input type="hidden" name="_subject" value="New Admission Enquiry - Mothers Touch School" />
+                                <input type="hidden" name="_template" value="box" />
                                 <input
                                     type="tel"
+                                    name="phone"
                                     placeholder="Your Phone Number"
                                     className="w-full rounded-md border-slate-200 text-sm px-3 py-2"
                                     required
                                 />
-                                <Button size="sm" className="w-full bg-secondary hover:bg-amber-600">
+                                <Button
+                                    type="submit"
+                                    size="sm"
+                                    className="w-full bg-secondary hover:bg-amber-600"
+                                >
                                     Request Call Back
                                 </Button>
                             </form>
@@ -77,6 +101,12 @@ export function FloatingElements() {
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* Thank You Popup */}
+            <ThankYouPopup
+                isOpen={showThankYou}
+                onClose={() => setShowThankYou(false)}
+            />
         </>
     );
 }

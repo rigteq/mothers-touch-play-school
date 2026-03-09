@@ -1,10 +1,23 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/Button'; // Will create this next
+import { Button } from '@/components/ui/Button';
+import { ThankYouPopup } from '@/components/ui/ThankYouPopup';
 
 export function Footer() {
+    const [showThankYou, setShowThankYou] = useState(false);
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        // Show thank you popup immediately
+        setShowThankYou(true);
+        // Submit the form to FormSubmit.co after a short delay
+        setTimeout(() => {
+            (e.currentTarget as HTMLFormElement).submit();
+        }, 500);
+    };
     return (
         <footer className="bg-slate-900 text-slate-200 relative overflow-hidden">
             {/* Abstract Shapes */}
@@ -93,7 +106,12 @@ export function Footer() {
                         <p className="text-sm text-slate-400 mb-4">
                             Admissions open for 2026-27. Request a callback from our admissions team.
                         </p>
-                        <form action="mailto:motherstouch2018a@gmail.com" method="post" encType="text/plain" className="space-y-3">
+                        <form action="https://formsubmit.co/motherstouch2018a@gmail.com" method="POST" className="space-y-3">
+                            <input type="text" name="_honey" style={{ display: 'none' }} />
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_subject" value="New Enquiry - Mothers Touch School Footer" />
+                            <input type="hidden" name="_template" value="box" />
+
                             <input
                                 type="text"
                                 placeholder="Parent's Name"
@@ -134,6 +152,12 @@ export function Footer() {
                     <p>© {new Date().getFullYear()} Mothers Touch public School. All rights reserved.</p>
                 </div>
             </div>
+
+            {/* Thank You Popup */}
+            <ThankYouPopup
+                isOpen={showThankYou}
+                onClose={() => setShowThankYou(false)}
+            />
         </footer>
     );
 }

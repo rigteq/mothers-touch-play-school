@@ -1,10 +1,23 @@
 'use client';
 
+import { useState } from 'react';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
+import { ThankYouPopup } from '@/components/ui/ThankYouPopup';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export function Contact() {
+    const [showThankYou, setShowThankYou] = useState(false);
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        // Show thank you popup immediately
+        setShowThankYou(true);
+        // Submit the form to FormSubmit.co after a short delay
+        setTimeout(() => {
+            (e.currentTarget as HTMLFormElement).submit();
+        }, 500);
+    };
     return (
         <Section id="contact" className="bg-white">
             <div className="grid lg:grid-cols-2 gap-16">
@@ -60,7 +73,12 @@ export function Contact() {
                     <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary" />
                     <h3 className="text-2xl font-bold text-slate-900 mb-6">Admission Enquiry</h3>
 
-                    <form action="mailto:motherstouch2018a@gmail.com" method="post" encType="text/plain" className="space-y-4">
+                    <form action="https://formsubmit.co/motherstouch2018a@gmail.com" method="POST" className="space-y-4">
+                        <input type="text" name="_honey" style={{ display: 'none' }} />
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input type="hidden" name="_subject" value="New Admission Enquiry - Mothers Touch School" />
+                        <input type="hidden" name="_template" value="box" />
+
                         <div className="grid md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-slate-700">Child's Name</label>
@@ -112,6 +130,12 @@ export function Contact() {
                     </form>
                 </div>
             </div>
+
+            {/* Thank You Popup */}
+            <ThankYouPopup
+                isOpen={showThankYou}
+                onClose={() => setShowThankYou(false)}
+            />
         </Section>
     );
 }

@@ -21,7 +21,7 @@ export function Hero() {
                 {/* Main Image */}
                 <div className="w-full h-full relative flex items-center justify-center bg-slate-800">
                     <img
-                        src="/hero-image.jpg"
+                        src="/HERO-LATEST.jpeg"
                         alt="Mothers Touch public School Welcome Banner"
                         className="absolute inset-0 w-full h-full object-cover"
                     />

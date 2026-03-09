@@ -16,9 +16,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://motherstouchschool.com'),
   title: "Mothers Touch public School | Gajraula's Best Kindergarten & Daycare",
   description: "Mothers Touch public School in Gajraula provides a world-class holistic learning environment for children. Admissions open for Playgroup, Nursery, LKG, and UKG.",
   keywords: "public School in Gajraula, Nursery School, Best Kindergarten, Mothers Touch, Preschool Admission",
+  robots: "index, follow",
+  openGraph: {
+    title: "Mothers Touch public School | Gajraula's Best Kindergarten & Daycare",
+    description: "Mothers Touch public School in Gajraula provides a world-class holistic learning environment for children. Admissions open for Playgroup, Nursery, LKG, and UKG.",
+    url: "https://motherstouchschool.com", // Replace with actual URL
+    siteName: "Mothers Touch public School",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Mothers Touch public School Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mothers Touch public School | Gajraula's Best Kindergarten & Daycare",
+    description: "Mothers Touch public School in Gajraula provides a world-class holistic learning environment for children. Admissions open for Playgroup, Nursery, LKG, and UKG.",
+    images: ["/logo.png"],
+  },
   icons: {
     icon: '/logo.png',
   },
