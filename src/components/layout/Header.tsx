@@ -56,7 +56,7 @@ export function Header() {
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-3">
                     {/* Parent Portal Button - Outlined Style */}
                     <Link
-                        href="https://freeschoolms.vercel.app/"
+                        href="https://https://schoolmsindia.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold border border-primary/20 text-primary hover:bg-primary/5 transition-all"
@@ -128,7 +128,7 @@ export function Header() {
                                         📞 Call Now
                                     </Link>
                                     <Link
-                                        href="https://freeschoolms.vercel.app/"
+                                        href="https://https://schoolmsindia.vercel.app/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-primary hover:bg-blue-50"
