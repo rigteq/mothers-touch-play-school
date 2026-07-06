@@ -61,7 +61,7 @@ export function Footer() {
                                 { label: 'Our Programs', href: '#programs' },
                                 { label: 'Admissions', href: '#contact' },
                                 { label: 'Gallery', href: '#gallery' },
-                                { label: 'Admin Portal', href: 'https://freeschoolms.vercel.app/', external: true },
+                                { label: 'Admin Portal', href: 'https://schoolmsindia.vercel.app/', external: true },
                                 { label: 'Facilities', href: '#facilities' },
                             ].map((link) => (
                                 <li key={link.label}>
